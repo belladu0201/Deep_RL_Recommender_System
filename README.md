@@ -31,7 +31,7 @@ The data sets.
 - What can be improved.
 
 
-## Contribution
+## Contribution (Task A: CQL loss; Task B: Item/User Features)
 - Elisa Chen:
 - Beibei Du:
 - Aditya John:
@@ -41,3 +41,13 @@ The data sets.
 
 ## Reference
 [1] Xin, Xin, et al. "Self-supervised reinforcement learning for recommender systems." Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval. 2020.
+
+
+## Quick Links to the resources
+- Setup Video: https://duke.zoom.us/rec/play/YLp4O2k-92fKFY0sqP8WgwcbtgcZ58yl7EFms3ef8QvoFfNFToUWGsGvH9XyzNRRSfMHN6_EGiUWHaWK.GclYbUf34PNRPJpS?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fduke.zoom.us%2Frec%2Fshare%2F3qVUTlyJP855r9nNiSEQ2rtTho--Dzo0MjTtB8BMw0CyVXKqAsgxKHo8nzakvT2y.arWt-MPztCNOBMeC
+- Hint 2: https://sakai.duke.edu/portal/site/AIPI-531-01-Sp23/tool/1e88ff74-8322-4f03-b00d-5f2fc168b0be?panel=Main
+- Hint 1: https://sakai.duke.edu/portal/site/AIPI-531-01-Sp23/tool/1e88ff74-8322-4f03-b00d-5f2fc168b0be?panel=Main
+- Setup Source Code: https://colab.research.google.com/drive/1g8JpuF5GoumflDJtMV2uMUfRjY_xheQX?usp=sharing
+
+
+
