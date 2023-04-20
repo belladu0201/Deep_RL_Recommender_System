@@ -33,4 +33,4 @@ The data sets.
 
 
 ## Reference
-[1] 
+[1] Xin, Xin, et al. "Self-supervised reinforcement learning for recommender systems." Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval. 2020.
