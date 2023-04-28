@@ -1,4 +1,4 @@
-# Deep_RL_Recommender_System Project for E-commerce (AIPI531)
+# Deep RL Recommender System Project for E-commerce (AIPI531)
 
 ## Team Members:
 Elisa Chen, Beibei Du, Aditya John, Medha Sreenivasan[in alphabetical order by last name]
@@ -6,7 +6,7 @@ Elisa Chen, Beibei Du, Aditya John, Medha Sreenivasan[in alphabetical order by l
 <img width="794" alt="Screen Shot 2023-04-20 at 6 59 18 PM" src="https://user-images.githubusercontent.com/60382493/233504139-a65d59c8-ee63-4e43-abed-958199c858ab.png">
 
 ## Motivation
-The rapid expansion of the e-commerce industry has led to an overwhelming amount of choices for consumers, making it increasingly difficult for customers to find relevant products that fullfill their preferences and needs. To solve this issue, personalized product recommendations have become an important aspect of enhancing user experience and ensuring customer satisfaction. Most importantly, increasing the sales and prestiage of the companies to achieve double win. As a result, there is a growing demand for innovative and effective product recommendation systems that can adapt to users' preferences in real-time and provide accurate recommendations. 
+The rapid expansion of the e-commerce industry has led to an overwhelming amount of choices for consumers, making it increasingly difficult for customers to find relevant products that fullfill their preferences and needs. To solve this issue, personalized product recommendations have become an important aspect of enhancing user experience and ensuring customer satisfaction. Most importantly, increasing the sales and prestige of the companies to achieve double win. As a result, there is a growing demand for innovative and effective product recommendation systems that can adapt to users' preferences in real-time and provide accurate recommendations. 
 
 ## Goal
 This project aims to explore recommender systems by implementing algorithms into datasets, specifically focusing on session-based and sequential recommendation techniques that can be utilized in e-commerce use cases. By experimenting with different methods, including Deep Reinforcement Learning (DRL), we strive to improve the performance of recommendation systems and ultimately contribute to an enhanced user experience in the e-commerce domain. In this project, we are comparing the performance of a vanilla GRU model to a hRNN (hierarchical RNN) model that also accounts for item features. Introducing item features as part of the recommendation system can be greatly beneficial in cold start situations.
@@ -31,7 +31,7 @@ The second dataset was from H&M Group. H&M Group is a family of brands and busin
 
 ## Methodology
 ### One Hot Encoding of Item Features
-For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 5000 most frequent properties for the retail rocket dataset and XXX most frequent properties for the H&M dataset. On average, the top N properties covered ~60% of all possible properties in the feature space. 
+For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 2000 most frequent properties for the retail rocket dataset and XXX most frequent properties for the H&M dataset. On average, the top N properties covered ~50% of all possible properties in the feature space. 
 
 ### Re-defined Loss Function
 To create a hRNN model, we had to pass in the item feature matrix through another feed-forward layer to create item embedding vectors that can be incorporated as part of the score for the jth item. We modified the existing loss function in the `SNQN.py` file with the new loss function that also accounts for item embedding vectors.
