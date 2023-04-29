@@ -97,6 +97,8 @@ The following suggestions could be implemented in a future study for a better mo
 
 2) **Alternative Evaluation Metric:** We are currently using HR and NDCG to evaluate the model. However, there are other metrics such as MRR and MAP that could also be used to evaluate the model performance. Using alternative metrics could help us gain a more nuanced and encompassing understanding of the model performance. 
 
+3) **Increase capacity of computational resources**: Currently we're limiting our feature item matrix to top 500 features and 5 epochs due to computational constraints, but having access to more GPUs and storage could be beneficial for improving model performance.
+
 ## Contribution (Task A: CQL loss; Task B: Item/User Features)
 - Elisa Chen: 1) Incorporating item features as part of source code (SNQN.py) 2) model training & evaluation.
 - Beibei Du: 
