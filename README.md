@@ -59,16 +59,16 @@ Below are the results for GRU (Baseline) and hRNN (GRU + Iten Features) for our 
 
 **Clicks**
 
-| Model | HR@5   | NG@5   | HR@5 | NG@5 | HR@10 | NG@10 | HR@20 | NG@20 |
+| Model | HR@5   | NG@5   | HR@10 | NG@10 | HR@15 | NG@15 | HR@20 | NG@20 |
 |-------|--------|--------|------|------|-------|-------|-------|-------|
-| GRU   | 0.0023 | 0.0023 |      |      |       |       |       |       |
+| GRU   | 0.1548 | 0.1219 | 0.1859 | 0.1319 | 0.2042 | 0.1368 | 0.2177 | 0.1399|
 | hRNN  | 0.1925 | 0.1435 | 0.2437 | 0.1601 | 0.2721 | 0.1676 | 0.2920 | 0.1723|
 
 **Purchase**
 
 | Model | HR@5   | NG@5   | HR@10 | NG@10 | HR@15 | NG@15 | HR@20 | NG@20 |
 |-------|--------|--------|------|------|-------|-------|-------|-------|
-| GRU   | 0.0023 | 0.0023 |      |      |       |       |       |       |
+| GRU   | 0.3483 | 0.2943 | 0.3879 | 0.3071 | 0.4124 | 0.3157 | 0.2177 | 0.1399|
 | hRNN  | 0.3973 | 0.3122 | 0.4547 | 0.3308 | 0.4880 | 0.3396 | 0.5112 | 0.3451|
 
 ### H&M
@@ -88,7 +88,7 @@ Below are the results for GRU (Baseline) and hRNN (GRU + Iten Features) for our 
 | hRNN  |        |        |      |      |       |       |       |       |
 
 
-As we can observe, hRNN performs consistently better ....
+For both clicks and purchases, the hRNN performs consistently better. On average, we obtain an **~20%** improvement in Clicks and an **~22%** improvement in Purchases for RetailRocket when including item features as part of the model. We observe similar improvements for H&M with xx% and xx% for clicks and purhcases respectively. 
 
 ## Future Research
 
