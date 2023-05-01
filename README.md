@@ -31,7 +31,7 @@ The second dataset was from H&M Group. H&M Group is a family of brands and busin
 
 ## Methodology
 ### One Hot Encoding of Item Features
-For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 2000 most frequent properties for the retail rocket dataset and XXX most frequent properties for the H&M dataset. On average, the top N properties covered ~50% of all possible properties in the feature space. 
+For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 2000 most frequent properties for the retail rocket dataset and 600 most frequent properties for the H&M dataset. On average, the top N properties covered ~50% of all possible properties in the feature space. The script for creating item features matrix is found in the file `10_code/one-hot-encoding.py` file. 
 
 ### Re-defined Loss Function
 To create a hRNN model, we had to pass in the item feature matrix through another feed-forward layer to create item embedding vectors that can be incorporated as part of the score for the jth item. We modified the existing loss function in the `SNQN.py` file with the new loss function that also accounts for item embedding vectors.
