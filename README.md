@@ -38,13 +38,13 @@ To create a hRNN model, we had to pass in the item feature matrix through anothe
 
 ## Instructions For Running The Code
 
-**Train Model Using Retail Rocket Dataset - DOUBLE CHECK THE PATH**
+**Train Model Using Retail Rocket Dataset**
 
-Open `20_code/RR/AIPI531_Project_RR.ipynb` notebook in Google Colab instance. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
+Open `10_code/AIPI531_Project_RR.ipynb` notebook in Google Colab instance. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
 
-**Train Model Using H&M Dataset - DOUBLE CHECK THE PATH**
+**Train Model Using H&M Dataset**
 
-Open `20_code/RR/AIPI531_Project_HM.ipynb` notebook in Google Colab instance. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
+Open `10_code/AIPI531_Project_HM.ipynb` notebook in Google Colab instance. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
 
 ## Results & Discussion
 
