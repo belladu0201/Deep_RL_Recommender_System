@@ -38,13 +38,15 @@ To create a hRNN model, we had to pass in the item feature matrix through anothe
 
 ## Instructions For Running The Code
 
+Download the SA2C model codebase from https://drive.google.com/drive/u/0/folders/1dQnRqbqhTgZzQWOm2ccCiVza4mNtk7G1. 
+
 **Train Model Using Retail Rocket Dataset**
 
-Open `10_code/AIPI531_Project_RR.ipynb` notebook in Google Colab instance. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
+Open `10_code/AIPI531_Project_RR.ipynb` notebook in Google Colab instance in the same directory where the SA2C model codebase is stored. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
 
 **Train Model Using H&M Dataset**
 
-Open `10_code/AIPI531_Project_HM.ipynb` notebook in Google Colab instance. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
+Open `10_code/AIPI531_Project_HM.ipynb` notebook in Google Colab instance in the same directory where the SA2C model codebase is stored. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
 
 ## Results & Discussion
 
