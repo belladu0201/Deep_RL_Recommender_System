@@ -9,7 +9,7 @@ Elisa Chen, Beibei Du, Aditya John, Medha Sreenivasan[in alphabetical order by l
 The rapid expansion of the e-commerce industry has led to an overwhelming amount of choices for consumers, making it increasingly difficult for customers to find relevant products that fullfill their preferences and needs. To solve this issue, personalized product recommendations have become an important aspect of enhancing user experience and ensuring customer satisfaction. Most importantly, increasing the sales and prestige of the companies to achieve double win. As a result, there is a growing demand for innovative and effective product recommendation systems that can adapt to users' preferences in real-time and provide accurate recommendations. 
 
 ## Goal
-This project aims to explore recommender systems by implementing algorithms into datasets, specifically focusing on session-based and sequential recommendation techniques that can be utilized in e-commerce use cases. By experimenting with different methods, including Deep Reinforcement Learning (DRL), we strive to improve the performance of recommendation systems and ultimately contribute to an enhanced user experience in the e-commerce domain. In this project, we are comparing the performance of a vanilla GRU model to a hRNN (hierarchical RNN) model that also accounts for item features. Introducing item features as part of the recommendation system can be greatly beneficial in cold start situations.
+This project aims to explore recommender systems by implementing algorithms into datasets, specifically focusing on session-based and sequential recommendation techniques that can be utilized in e-commerce use cases. By experimenting with different methods, including Deep Reinforcement Learning (DRL), we strive to improve the performance of recommendation systems and ultimately contribute to an enhanced user experience in the e-commerce domain. In this project, we are comparing the performance of a GRU model to a hRNN (hierarchical RNN) model that also accounts for item features. Introducing item features as part of the recommendation system can be greatly beneficial in cold start situations.
 
 
 ## Related Works - FILL IN
@@ -23,7 +23,7 @@ We have used two E-commerce datasets for our project. Following are the details 
 
 **Dataset #1 - Retail Rocket Dataset**
 
-The first dataset used was from Retail Rocket. Retail Rocket is a company that generates personalized product recommendations for shopping websites and provides customer segmentation based on user interests and other parameters. The dataset was collected from a real-world e-commerce website and consisted of raw data, i.e., data without any content transformation. However, all values are hashed to address confidentiality concerns. Among the files in the dataset, only the behavior data (`events.csv`) is used in this project. The behavior data is a timestamped log of events like clicks, add to carts, and transactions that represent different interactions made by visitors on the e-commerce website over a time period of 4.5 months. There are a total of 2756101 events produced by 1407580 unique visitors. We also leveraged the `item_features_x.csv` dataset to capture the features of each item. The file contains information about the properties and values of each item. 
+The first dataset used was from Retail Rocket. Retail Rocket is a company that generates personalized product recommendations for shopping websites and provides customer segmentation based on user interests and other parameters. The dataset was collected from a real-world e-commerce website and consisted of raw data, i.e., data without any content transformation. However, all values are hashed to address confidentiality concerns. Among the files in the dataset, only the behavior data (`events.csv`) is used in this project. The behavior data is a timestamped log of events like clicks, add to carts, and transactions that represent different interactions made by visitors on the e-commerce website over a time period of 4.5 months. There are a total of 2756101 events produced by 1407580 unique visitors. We also leveraged the `item_features_x.csv` dataset to capture the features of each item. The file contains information about the properties and their values for each item. 
 
 **Dataset #2 - H&M Dataset**
 
@@ -31,10 +31,11 @@ The second dataset was from H&M Group. H&M Group is a family of brands and busin
 
 ## Methodology
 ### One Hot Encoding of Item Features
-For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 2000 most frequent properties for the retail rocket dataset and 600 most frequent properties for the H&M dataset. On average, the top N properties covered ~50% of all possible properties in the feature space. The script for creating item features matrix is found in the file `10_code/one-hot-encoding.py` file. 
+For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 2000 most frequent properties for the retail rocket dataset and 600 most frequent properties for the H&M dataset as the top N properties covered ~50% of all possible properties in the feature space, which we believe provided enough coverage for this analysis.
+The script for creating item features matrix is found in the file `10_code/one-hot-encoding.py` file. 
 
 ### Re-defined Loss Function
-To create a hRNN model, we had to pass in the item feature matrix through another feed-forward layer to create item embedding vectors that can be incorporated as part of the score for the jth item. We modified the existing loss function in the `SNQN.py` file with the new loss function that also accounts for item embedding vectors.
+To create a hRNN model, we had to pass in the item feature matrix through another feed-forward layer to create item embedding vectors that can be incorporated as part of the score for the jth item. Details of the loss function calculations can be found in this [paper](https://openreview.net/pdf?id=8QFKbygVy4r) and the details of the implementation, including the modified loss function that also accounts for item embedding vectors, are found in the `SNQN_RR_FeatureVec.py` file.
 
 ## Instructions For Running The Code
 
@@ -95,18 +96,17 @@ We can denote that for both clicks and purchases, the hRNN performs consistently
 ## Future Research
 
 The following suggestions could be implemented in a future study for a better model performance:
-1) **Hyperparameter Tuning Using Random Search**: The key hyperparameter values impacting the model output are `learning rate`, `epoch number` and `lambda`. We are using 0.005, 5 and 0.15 respectively for our model training. A random search could be used to better optimize the hyperparameter values in the future.
+1) **Hyperparameter Tuning Using Random Search**: The key hyperparameter values impacting the model output are `learning rate`, `epoch number` and `lambda`. We are using 0.005, 5 and 0.15 for the three key hyperparameters respectively for our model training. Alternatively hyperparameter tuning methods such as random search could be used to better optimize the hyperparameter values in the future.
 
 2) **Alternative Evaluation Metric:** We are currently using HR and NDCG to evaluate the model. However, there are other metrics such as MRR and MAP that could also be used to evaluate the model performance. Using alternative metrics could help us gain a more nuanced and encompassing understanding of the model performance. 
 
 3) **Increase capacity of computational resources**: Currently we're limiting our feature item matrix to top 500 features and 5 epochs due to computational constraints, but having access to more GPUs and storage could be beneficial for improving model performance.
 
 ## Contribution (Task A: CQL loss; Task B: Item/User Features)
-- Elisa Chen: 1) Incorporating item features as part of source code (SNQN.py) 2) model training & evaluation.
-- Beibei Du: 
-- Aditya John: 1) Incorporating item features as part of source code (SNQN.py) 2) model training & evaluation.
-- Medha Sreenivasan:
-
+- Elisa Chen: Source Code Modification & Model Training
+- Beibei Du: EDA & Preprorcessing of RetailRocket Data
+- Aditya John: Source Code Modification & Model Training
+- Medha Sreenivasan: EDA & Preprocessing of H&M Data
 
 
 ## Reference
