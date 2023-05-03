@@ -27,7 +27,7 @@ The first dataset used was from Retail Rocket. Retail Rocket is a company that g
 
 **Dataset #2 - H&M Dataset**
 
-The second dataset was from H&M Group. H&M Group is a family of brands and businesses with 53 online markets and approximately 4,850 stores. Their online store offers shoppers an extensive selection of products to browse through. The available metadata spans from simple data, such as garment type and customer age, to text data from product descriptions, to image data from garment images. Among the files in the dataset, we used the `transactions_train.csv` for our events data and `articles.csv` data for item features. This dataset contains information about the properties of each item. 
+The second dataset was from H&M Group. H&M Group is a family of brands and businesses with 53 online markets and approximately 4,850 stores. Their online store offers shoppers an extensive selection of products to browse through. The available metadata spans from simple data, such as garment type and customer age, to text data from product descriptions, to image data from garment images. Among the files in the dataset, we used the `transactions_train.csv` for our events data and `articles.csv` data for item features. This dataset contains information about the properties of each item. Due to the size of the dataset, we are running the model using a subset of the entire dataset from August 2020 - October 2020.
 
 ## Methodology
 ### One Hot Encoding of Item Features
@@ -78,20 +78,20 @@ Below are the results for GRU (Baseline) and hRNN (GRU + Iten Features) for our 
 
 **Clicks**
 
-| Model | HR@5   | NG@5   | HR@5 | NG@5 | HR@10 | NG@10 | HR@20 | NG@20 |
+| Model | HR@5   | NG@5   | HR@10 | NG@10 | HR@15 | NG@15 | HR@20 | NG@20 |
 |-------|--------|--------|------|------|-------|-------|-------|-------|
-| GRU   | 0.0023 | 0.0023 |      |      |       |       |       |       |
-| hRNN  |        |        |      |      |       |       |       |       |
+| GRU   | 0.0175 | 0.0129 | 0.0245| 0.0151 | 0.0305 | 0.0167| 0.0360| 0.0180|
+| hRNN  | 0.0174 | 0.0117 | 0.0317| 0.0163 | 0.0405 | 0.0186| 0.0485| 0.0205|
 
 **Purchase**
 
-| Model | HR@5   | NG@5   | HR@5 | NG@5 | HR@10 | NG@10 | HR@20 | NG@20 |
+| Model | HR@5   | NG@5   | HR@10 | NG@10 | HR@15 | NG@15 | HR@20 | NG@20 |
 |-------|--------|--------|------|------|-------|-------|-------|-------|
-| GRU   | 0.0023 | 0.0023 |      |      |       |       |       |       |
-| hRNN  |        |        |      |      |       |       |       |       |
+| GRU   | 0.0301 | 0.0205 | 0.0451 | 0.0254 | 0.0575 | 0.0286| 0.0680| 0.0311|
+| hRNN  | 0.0341 | 0.0225 | 0.0535 | 0.0288 | 0.0667 | 0.0323 | 0.0787 | 0.0351 |
 
 
-We can denote that for both clicks and purchases, the hRNN performs consistently better. On average, we obtain an **~11%** improvement in Clicks and an **~13%** improvement in Purchases for RetailRocket when including item features as part of the model. We observe similar improvements for H&M with xx% and xx% for clicks and purhcases respectively. 
+We can denote that for both clicks and purchases, the hRNN performs consistently better for the most part. On average, we obtain an **~11%** improvement in Clicks and an **~13%** improvement in Purchases for RetailRocket when including item features as part of the model. We observe similar improvements for H&M with **12%** and **12%** for clicks and purhcases respectively. It is good to denote that we're likely observing lower values for H&M due to the size of data.
 
 ## Future Research
 
