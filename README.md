@@ -115,11 +115,11 @@ The following suggestions could be implemented in a future study for a better mo
 
 3) **Increase capacity of computational resources**: Currently we're limiting our feature item matrix to top 500 / 600 features and 5 epochs due to computational constraints, but having access to more GPUs and storage could be beneficial for improving model performance. Additionally, training the model on more transactional / events data could also lead to better performance. 
 
-## Contribution (Task A: CQL loss; Task B: Item/User Features)
-- Elisa Chen: Source Code Modification & Model Training
-- Beibei Du: EDA & Preprorcessing of RetailRocket Data
-- Aditya John: Source Code Modification & Model Training
-- Medha Sreenivasan: EDA & Preprocessing of H&M Data
+## Contribution (Task: Item/User Features)
+- Elisa Chen: Source Code Modification for hRNN & Model Training for RR & H&M Data
+- Beibei Du: EDA & Preprocessing of RetailRocket Data; CQL Loss exploration.
+- Aditya John: Source Code Modification for hRNN & Model Training for RR
+- Medha Sreenivasan: EDA & Preprocessing of H&M Data; Model Training for H&M Data
 
 
 ## Reference
