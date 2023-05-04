@@ -30,7 +30,7 @@ The first dataset used was from Retail Rocket. Retail Rocket is a company that g
 The second dataset was from H&M Group. H&M Group is a family of brands and businesses with 53 online markets and approximately 4,850 stores. Their online store offers shoppers an extensive selection of products to browse through. The available metadata spans from simple data, such as garment type and customer age, to text data from product descriptions, to image data from garment images. Among the files in the dataset, we used the `transactions_train.csv` for our events data and `articles.csv` data for item features. This dataset contains information about the properties of each item. Due to the size of the dataset, we are running the model using a subset of the entire dataset from August 2020 - October 2020.
 
 ## Methodology
-### One Hot Encoding of Item Features
+### Feature Selection & One Hot Encoding of Item Features
 For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the features per each item. For this analysis, we only considered the 500 most frequent properties for the retail rocket dataset and 600 most frequent properties for the H&M dataset. The top 500 / 600 properties covered ~30% of all possible item features in the feature space, which we believe provided enough coverage for this analysis without limiting the computational efficiency (time and space) significantly. The script for creating item features matrix is found in the file `10_code/one-hot-encoding.py` file. 
 
 ### Re-defined Loss Function
