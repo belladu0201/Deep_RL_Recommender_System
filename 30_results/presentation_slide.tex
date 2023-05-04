@@ -1,0 +1,143 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\usetheme{Madrid}
+\title{Deep RL Recommender System}
+\author{Elisa Chen, Beibei Du, Aditya John, Medha Sreenivasan}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Deep Reinforcement Learning Recommender System}
+  \begin{itemize}
+    \item A recommender system based on deep reinforcement learning (DRL).
+    \item Uses a DRL algorithm to learn and provide personalized product recommendations.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation and Goal}
+\textbf{Motivation}: The e-commerce industry has grown rapidly, leading to an overwhelming number of choices for consumers. To enhance user experience and increase customer satisfaction, personalized product recommendations have become crucial. There is a growing demand for innovative and effective recommender systems that can provide accurate recommendations in real time.
+
+\textbf{Goal}: This project aims to explore session-based and sequential recommendation techniques for e-commerce use cases. By experimenting with different methods, including Deep Reinforcement Learning (DRL), we strive to improve the performance of recommendation systems and contribute to an enhanced user experience. We are comparing the performance of a GRU model to an hRNN model that also accounts for item features.
+\end{frame}
+
+\begin{frame}{Data}
+We used two E-commerce datasets for our project:
+\begin{itemize}
+\item \textbf{Retail Rocket Dataset}: Collected from a real-world e-commerce website and consisted of raw data without any content transformation. Only the behavior data (events.csv) and item features (item\_features\_x.csv) were used.
+\item \textbf{H\&M Dataset}: Contains information about transactions (transactions\_train.csv) and item features (articles.csv). We used a subset of the entire dataset from August 2020 - October 2020 due to its large size.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Exploratory Data Analysis}
+\textbf{Dataset #1 - Retail Rocket Dataset}
+
+- Category, events, and item properties datasets available for analysis.
+
+- Events dataset contains information on views, adds to cart, and transactions.
+
+- Analysis of events across time periods can provide insights into user behavior and preferences.
+
+\textbf{Dataset #2 - H\&M Dataset}
+
+- Summary statistics and shape of dataset displayed.
+
+- Preprocessing steps include data cleaning and sampling for training and testing.
+
+- Popularity of each item is calculated using the 'pop.py' script.
+\end{frame}
+
+
+\begin{frame}{Methodology}
+\textbf{Feature Selection and One-Hot Encoding of Item Features}
+
+- Feature selection performed on top 500/600 most frequent properties for Retail Rocket/H&M dataset.
+
+- One-hot encoding is used to create an item feature matrix.
+
+- Relevant columns filtered and saved as feature matrix dataset.
+
+\textbf{Re-defined Loss Function}
+
+- Item feature matrix passed through the feed-forward layer to create item embedding vectors.
+
+- Modified loss function accounts for item embedding vectors.
+
+- Details of implementation found in SNQN_RR_FeatureVec.py file.
+
+\end{frame}
+
+\begin{frame}{Retail Rocket and H\&M Results}
+\textbf{Retail Rocket:}
+\begin{center}
+\begin{center}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Model} & \multicolumn{2}{|c|}{\textbf{HR@5}} & \multicolumn{2}{|c|}{\textbf{HR@10}} & \multicolumn{2}{|c|}{\textbf{HR@15}} & \multicolumn{2}{|c|}{\textbf{HR@20}}\\
+\cline{2-9}
+& Clicks & Purchase & Clicks & Purchase & Clicks & Purchase & Clicks & Purchase\\
+\hline
+GRU & \scriptsize{0.1925} & \scriptsize{0.3973} & \scriptsize{0.2437} & \scriptsize{0.4547} & \scriptsize{0.2721} & \scriptsize{0.4880} & \scriptsize{0.2920} & \scriptsize{0.5112}\\
+hRNN & \scriptsize{0.2237} & \scriptsize{0.4596} & \scriptsize{0.2672} & \scriptsize{0.5090} & \scriptsize{0.2929} & \scriptsize{0.5371} & \scriptsize{0.3118} & \scriptsize{0.5577}\\
+\hline
+\end{tabular}
+
+\smallskip
+H\&M:
+
+\smallskip
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Model} & \multicolumn{2}{|c|}{\textbf{HR@5}} & \multicolumn{2}{|c|}{\textbf{HR@10}} & \multicolumn{2}{|c|}{\textbf{HR@15}} & \multicolumn{2}{|c|}{\textbf{HR@20}}\\
+\cline{2-9}
+& Clicks & Purchase & Clicks & Purchase & Clicks & Purchase & Clicks & Purchase\\
+\hline
+GRU & \scriptsize{0.0175} & \scriptsize{0.0301} & \scriptsize{0.0245} & \scriptsize{0.0451} & \scriptsize{0.0305} & \scriptsize{0.0575} & \scriptsize{0.0360} & \scriptsize{0.0680}\\
+hRNN & \scriptsize{0.0174} & \scriptsize{0.0341} & \scriptsize{0.0317} & \scriptsize{0.0535} & \scriptsize{0.0405} & \scriptsize{0.0667} & \scriptsize{0.0485} & \scriptsize{0.0787}\\
+\hline
+\end{tabular}
+
+
+
+\end{center}
+\end{center}
+
+\textbf{Summary:}
+- hRNN performs consistently better than GRU for clicks and purchases.
+
+- Including item features leads to an ~11-12\% improvement in clicks and purchases for Retail Rocket.
+
+- Similar improvements were observed for H\&M.
+
+- H\&M results are likely lower due to the smaller data size.
+
+\end{frame}
+
+
+\begin{frame}{Future Research}
+\begin{itemize}
+\item \textbf{Hyperparameter Tuning Using Random Search}: The key hyperparameter values impacting the model output are learning rate, epoch number, and lambda. We are using 0.005, 5, and 0.15 for the three key hyperparameters respectively for our model training. Alternatively, hyperparameter tuning methods such as random search could be used to optimize the hyperparameter values in the future better.
+
+\item \textbf{Alternative Evaluation Metric}: We currently use HR and NDCG to evaluate the model. However, there are other metrics such as MRR and MAP that could also be used to evaluate the model performance. Using alternative metrics could help us gain a more nuanced and encompassing understanding of the model performance.
+
+\item \textbf{Increase capacity of computational resources}: More GPUs and storage could improve model performance. Training on more transactional data can also lead to better results.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{GitHub Repository}
+  \begin{block}{Repository}
+    \url{https://github.com/belladu0201/Deep_RL_Recommender_System}
+  \end{block}
+\end{frame}
+
+\end{document}
