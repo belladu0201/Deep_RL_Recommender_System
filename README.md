@@ -31,23 +31,22 @@ The second dataset was from H&M Group. H&M Group is a family of brands and busin
 
 ## Methodology
 ### One Hot Encoding of Item Features
-For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the values per each item. For this analysis, we only considered the 2000 most frequent properties for the retail rocket dataset and 600 most frequent properties for the H&M dataset as the top N properties covered ~50% of all possible properties in the feature space, which we believe provided enough coverage for this analysis.
-The script for creating item features matrix is found in the file `10_code/one-hot-encoding.py` file. 
+For both Retail Rocket and H&M datasets, we had to perform feature selection for the most pertinent properties and one-hot-encode all the features per each item. For this analysis, we only considered the 500 most frequent properties for the retail rocket dataset and 600 most frequent properties for the H&M dataset. The top 500 / 600 properties covered ~30% of all possible item features in the feature space, which we believe provided enough coverage for this analysis without limiting the computational efficiency (time and space) significantly. The script for creating item features matrix is found in the file `10_code/one-hot-encoding.py` file. 
 
 ### Re-defined Loss Function
 To create a hRNN model, we had to pass in the item feature matrix through another feed-forward layer to create item embedding vectors that can be incorporated as part of the score for the jth item. Details of the loss function calculations can be found in this [paper](https://openreview.net/pdf?id=8QFKbygVy4r) and the details of the implementation, including the modified loss function that also accounts for item embedding vectors, are found in the `SNQN_RR_FeatureVec.py` file.
 
 ## Instructions For Running The Code
 
-Download the SA2C model codebase from https://drive.google.com/drive/u/0/folders/1dQnRqbqhTgZzQWOm2ccCiVza4mNtk7G1. 
+1. Download the SA2C model codebase from https://drive.google.com/drive/u/0/folders/1dQnRqbqhTgZzQWOm2ccCiVza4mNtk7G1. 
 
 **Train Model Using Retail Rocket Dataset**
 
-Open `10_code/AIPI531_Project_RR.ipynb` notebook in Google Colab instance in the same directory where the SA2C model codebase is stored. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
+2a. Open `10_code/AIPI531_Project_RR.ipynb` notebook in Google Colab instance in the same directory where the SA2C model codebase is stored. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
 
 **Train Model Using H&M Dataset**
 
-Open `10_code/AIPI531_Project_HM.ipynb` notebook in Google Colab instance in the same directory where the SA2C model codebase is stored. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
+2b. Open `10_code/AIPI531_Project_HM.ipynb` notebook in Google Colab instance in the same directory where the SA2C model codebase is stored. This file contains all code to reproduce the results for Retail Rocket Dataset. Running the notebook should train and evaluate the model on purchase and click hr & ndcg.
 
 ## Results & Discussion
 
@@ -91,7 +90,7 @@ Below are the results for GRU (Baseline) and hRNN (GRU + Iten Features) for our 
 | hRNN  | 0.0341 | 0.0225 | 0.0535 | 0.0288 | 0.0667 | 0.0323 | 0.0787 | 0.0351 |
 
 
-We can denote that for both clicks and purchases, the hRNN performs consistently better for the most part. On average, we obtain an **~11%** improvement in Clicks and an **~13%** improvement in Purchases for RetailRocket when including item features as part of the model. We observe similar improvements for H&M with **12%** and **12%** for clicks and purhcases respectively. It is good to denote that we're likely observing lower values for H&M due to the size of data.
+We can denote that for both clicks and purchases, the hRNN performs consistently better for the most part. On average, we obtain an **~11%** improvement in Clicks and an **~13%** improvement in Purchases for RetailRocket when including item features as part of the model. We observe similar improvements for H&M with **12%** and **12%** for clicks and purhcases respectively. It is good to denote that we're likely observing lower values for H&M due to the smaller size of data.
 
 ## Future Research
 
@@ -100,7 +99,7 @@ The following suggestions could be implemented in a future study for a better mo
 
 2) **Alternative Evaluation Metric:** We are currently using HR and NDCG to evaluate the model. However, there are other metrics such as MRR and MAP that could also be used to evaluate the model performance. Using alternative metrics could help us gain a more nuanced and encompassing understanding of the model performance. 
 
-3) **Increase capacity of computational resources**: Currently we're limiting our feature item matrix to top 500 features and 5 epochs due to computational constraints, but having access to more GPUs and storage could be beneficial for improving model performance.
+3) **Increase capacity of computational resources**: Currently we're limiting our feature item matrix to top 500 / 600 features and 5 epochs due to computational constraints, but having access to more GPUs and storage could be beneficial for improving model performance. Additionally, training the model on more transactional / events data could also lead to better performance. 
 
 ## Contribution (Task A: CQL loss; Task B: Item/User Features)
 - Elisa Chen: Source Code Modification & Model Training
@@ -118,6 +117,3 @@ The following suggestions could be implemented in a future study for a better mo
 - Hint 2: https://sakai.duke.edu/portal/site/AIPI-531-01-Sp23/tool/1e88ff74-8322-4f03-b00d-5f2fc168b0be?panel=Main
 - Hint 1: https://sakai.duke.edu/portal/site/AIPI-531-01-Sp23/tool/1e88ff74-8322-4f03-b00d-5f2fc168b0be?panel=Main
 - Setup Source Code: https://colab.research.google.com/drive/1g8JpuF5GoumflDJtMV2uMUfRjY_xheQX?usp=sharing
-
-
-
