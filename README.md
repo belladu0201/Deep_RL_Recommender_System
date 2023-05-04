@@ -11,12 +11,6 @@ The rapid expansion of the e-commerce industry has led to an overwhelming amount
 ## Goal
 This project aims to explore recommender systems by implementing algorithms into datasets, specifically focusing on session-based and sequential recommendation techniques that can be utilized in e-commerce use cases. By experimenting with different methods, including Deep Reinforcement Learning (DRL), we strive to improve the performance of recommendation systems and ultimately contribute to an enhanced user experience in the e-commerce domain. In this project, we are comparing the performance of a GRU model to a hRNN (hierarchical RNN) model that also accounts for item features. Introducing item features as part of the recommendation system can be greatly beneficial in cold start situations.
 
-
-## Related Works - FILL IN
-- Mention the papers
-hRNN models: https://openreview.net/pdf?id=8QFKbygVy4r
-Inspiration: https://arxiv.org/pdf/2111.03474.pdf 
-
 ## Data
 
 We have used two E-commerce datasets for our project. Following are the details of the datasets used
