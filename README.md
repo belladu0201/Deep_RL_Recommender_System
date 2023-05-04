@@ -33,6 +33,13 @@ The second dataset was from H&M Group. H&M Group is a family of brands and busin
 **Dataset #1 - Retail Rocket Dataset**
 - There are three primary datasets available for analysis: category, events, and item properties. The category dataset includes 1669 unique category IDs and 363 parent category IDs. These categories can provide valuable context when examining user behavior and preferences.
 - The events dataset is particularly useful in understanding user behavior over time. This dataset contains information on three types of events: views, adds to cart, and transactions. By analyzing these events across different time periods, it is possible to gain insights into user engagement, preferences, and purchase behavior. 
+- The value counts of the three events are displayed below:
+<img width="892" alt="Screen Shot 2023-05-04 at 3 45 28 AM" src="https://user-images.githubusercontent.com/60382493/236141624-bc0be8d5-6cf8-4c2c-a750-0e02ab73608e.png">
+
+- Sample analysis on events across day over a month is attached below: 
+<img width="898" alt="Screen Shot 2023-05-04 at 3 46 17 AM" src="https://user-images.githubusercontent.com/60382493/236141805-bf9b7c54-c260-44cf-a42e-83b88ec1f972.png">
+The decline in the three main events (views, adds to cart, and transactions) towards the end of each month may be attributed to the fact that not all months have 31 days.
+
 
 **Dataset #2 - H&M Dataset**
 
