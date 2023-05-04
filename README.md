@@ -30,10 +30,11 @@ The first dataset used was from Retail Rocket. Retail Rocket is a company that g
 The second dataset was from H&M Group. H&M Group is a family of brands and businesses with 53 online markets and approximately 4,850 stores. Their online store offers shoppers an extensive selection of products to browse through. The available metadata spans from simple data, such as garment type and customer age, to text data from product descriptions, to image data from garment images. Among the files in the dataset, we used the `transactions_train.csv` for our events data and `articles.csv` data for item features. This dataset contains information about the properties of each item. Due to the size of the dataset, we are running the model using a subset of the entire dataset from August 2020 - October 2020.
 
 ## Exploratory Data Analysis
-1. Retail Rocket Dataset
-- The dataset contains 2756101 events produced by 1407580 unique visitors.
-- The dataset contains 235061 unique items.
-- The dataset contains 500 unique properties.
+**Dataset #1 - Retail Rocket Dataset**
+- There are three primary datasets available for analysis: category, events, and item properties. The category dataset includes 1669 unique category IDs and 363 parent category IDs. These categories can provide valuable context when examining user behavior and preferences.
+- The events dataset is particularly useful in understanding user behavior over time. This dataset contains information on three types of events: views, adds to cart, and transactions. By analyzing these events across different time periods, it is possible to gain insights into user engagement, preferences, and purchase behavior. 
+
+**Dataset #2 - H&M Dataset**
 
 ## Methodology
 ### Feature Selection & One Hot Encoding of Item Features
