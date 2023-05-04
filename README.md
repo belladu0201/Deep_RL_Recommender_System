@@ -111,6 +111,9 @@ The following suggestions could be implemented in a future study for a better mo
 ## Reference
 [1] Xin, Xin, et al. "Self-supervised reinforcement learning for recommender systems." Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval. 2020.
 
+## Link to the Google Drive of Code:
+- https://drive.google.com/drive/folders/1MdBzCp3ry4GlHnI6pyi-zOYhSfUNzfvW?usp=sharing
+
 
 ## Quick Links to the resources
 - Setup Video: https://duke.zoom.us/rec/play/YLp4O2k-92fKFY0sqP8WgwcbtgcZ58yl7EFms3ef8QvoFfNFToUWGsGvH9XyzNRRSfMHN6_EGiUWHaWK.GclYbUf34PNRPJpS?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fduke.zoom.us%2Frec%2Fshare%2F3qVUTlyJP855r9nNiSEQ2rtTho--Dzo0MjTtB8BMw0CyVXKqAsgxKHo8nzakvT2y.arWt-MPztCNOBMeC
