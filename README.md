@@ -38,7 +38,7 @@ To create a hRNN model, we had to pass in the item feature matrix through anothe
 
 ## Instructions For Running The Code
 
-1. Download the SA2C model codebase from https://drive.google.com/drive/u/0/folders/1dQnRqbqhTgZzQWOm2ccCiVza4mNtk7G1. 
+1. Download the SA2C model codebase from here: https://drive.google.com/drive/folders/1dQnRqbqhTgZzQWOm2ccCiVza4mNtk7G1?usp=sharing . 
 
 **Train Model Using Retail Rocket Dataset**
 
